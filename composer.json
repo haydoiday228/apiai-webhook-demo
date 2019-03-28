@@ -10,11 +10,10 @@
 			"name": "David Zuelke",
 			"email": "dz@heroku.com"
 		}
-	],
-	"bin": [
-		"bin/heroku-hhvm-apache2",
-		"bin/heroku-hhvm-nginx",
-		"bin/heroku-php-apache2",
-		"bin/heroku-php-nginx"
-	]
+	],	
+	"post-install-cmd": [
+	     "php artisan clear-compiled",
+	     "php artisan optimize",
+	     "chmod -R 777 public/"
+	 ]
 }
